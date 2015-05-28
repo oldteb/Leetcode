@@ -12,7 +12,8 @@ public class Combinations {
         }
         List<Integer> list = new ArrayList<Integer>();
         help(list, 1, 1, rst, n, k);
-        
+
+        // return the result.. 
         return rst;
     }
     
