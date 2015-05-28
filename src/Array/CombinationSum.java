@@ -32,7 +32,6 @@ public class CombinationSum {
     void help(int[] candidates, int cur_sum, int level, int target, int[] times, List<List<Integer>> rst){
     	if(level == candidates.length){
     		if(cur_sum == target){
-    			//add...
     			ArrayList<Integer> temp = new ArrayList<Integer>();
     			for(int i = 0; i < candidates.length ; i++){
     				for(int j = 0; j < times[i]; j++){
