@@ -1,17 +1,18 @@
 package test;
 
+import java.util.concurrent.Future;
+
 
 public class Test4 {
 	public static void main(String[] args) {
 		Test4 t = new Test4();
-		//System.out.println(t.fun(-1));
-		System.out.println(true || false);
+		Integer intobj = new Integer(1);
+		t.fun(intobj);
+		System.out.println(intobj);
 	}
 	
-	boolean fun(int i){
-		int c = -1;
-		Object o;
-		return (i != c);
+	void fun(Integer i){
+		i.i
 	}
 }
 

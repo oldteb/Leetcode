@@ -28,6 +28,7 @@ public class Test {
 		LinkedList<Integer> llist = new LinkedList<Integer>();
 		llist.push
 		llist.size();
+		String str = "abc";
 		
 		String s = new String("abc a");
 		s.split("");
@@ -42,7 +43,7 @@ public class Test {
 		Map<Integer,Integer> map;
 		map.size();
 		map.get(s);
-//		map.remove(1);
+		map.remove(key)
 		Stack<Integer> stack;
 
 		
