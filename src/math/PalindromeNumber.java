@@ -1,7 +1,33 @@
 package math;
-
+/**
+ * Determine whether an integer is a palindrome. Do this without extra space.
+ * 
+ * 
+ * @author yunhe
+ *
+ */
 public class PalindromeNumber {
-    public boolean isPalindrome(int x) {
+	//  simple code
+    public boolean isPalindrome1(int x) {
+        if(x < 0) return false;
+        int baseL = 1;
+        int baseR = 1;
+        while(x/baseL != 0){
+            if(Integer.MAX_VALUE/10 < baseL)  break; // Prevent overflow
+            baseL *= 10;
+        }
+        if(Integer.MAX_VALUE/10 >= baseL) baseL /= 10;
+        while(baseL > baseR){
+            if((x/baseL)%10 != (x/baseR)%10) return false;
+            baseL /= 10;
+            baseR *= 10;
+        }
+        
+        return true;
+    }
+    
+    // complicated code
+    public boolean isPalindrome2(int x) {
         if(x>=0 && x<10){
             return true;
         }
@@ -41,7 +67,7 @@ public class PalindromeNumber {
     
     public static void main(String[] argv){
     	PalindromeNumber pn = new PalindromeNumber();
-    	System.out.println(pn.isPalindrome(2357532));
+    	System.out.println(pn.isPalindrome2(2357532));
     	
     }
 }

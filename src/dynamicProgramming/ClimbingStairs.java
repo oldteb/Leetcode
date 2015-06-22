@@ -1,22 +1,25 @@
 package dynamicProgramming;
 
+/**
+ * You are climbing a stair case. It takes n steps to reach to the top.
+ * 
+ * Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+ * 
+ * 
+ * @author yunhe
+ *
+ */
 public class ClimbingStairs {
     public int climbStairs(int n) {
-        if(n < 0)  return 0;
-        else if(n == 1)  return 1;
-        else if(n == 2)  return 2;
-        
-        int[] arr1 = new int[n+1];
-        int[] arr2 = new int[n+1];
-        arr1[1] = 1;
-        arr1[2] = 1;
-        arr2[1] = 0;
-        arr2[2] = 1;
-        for(int i = 3; i <= n; i++){
-            arr1[i] = arr1[i-1] + arr2[i-1];
-            arr2[i] = arr1[i-1];
+        if(n <= 0)  return 0;
+        int oneStep = 1;
+        int twoStep = 0;
+        for(int i = 1; i < n; i++){
+            int temp = oneStep;
+            oneStep = oneStep + twoStep;
+            twoStep = temp;
         }
-
-        return arr1[n] + arr2[n];
+        
+        return oneStep + twoStep;
     }
 }

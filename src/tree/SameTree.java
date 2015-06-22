@@ -1,24 +1,26 @@
 package tree;
 
+/**
+ * 
+ * Given two binary trees, write a function to check if they are equal or not.
+ *
+ * Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
+ * 
+ * 
+ * @author yunhe
+ *
+ */
 public class SameTree {
     public boolean isSameTree(TreeNode p, TreeNode q) {
-        if(p == null && q == null)  return true;
-        else if(p == null || q == null)  return false;
-        
-        return help(p,q);
+        return dfs(p,q);
     }
     
-    boolean help(TreeNode p, TreeNode q){
-        if(p.val != q.val)  return false;
-        if(p.left != null && q.left != null){
-            if(help(p.left,q.left) == false)  return false;
-        }
-        else if(p.left != null || q.left != null)  return false;
-        if(p.right != null && q.right != null){
-            if(help(p.right,q.right) == false)  return false;
-        }
-        else if(p.right != null || q.right != null)  return false;
-        
+    boolean dfs(TreeNode leftNode, TreeNode rightNode){
+        if(leftNode == null && rightNode == null)  return true;
+        if(leftNode == null || rightNode == null)  return false;
+        if(leftNode.val != rightNode.val)  return false;
+        if(dfs(leftNode.left,rightNode.left) == false)  return false;
+        if(dfs(leftNode.right,rightNode.right) == false)  return false;
         return true;
     }
 }

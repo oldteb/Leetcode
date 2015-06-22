@@ -1,9 +1,9 @@
-package Stack;
+package datastructure;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MinStack {
+public class MinStack2 {
     List<Integer> list = new ArrayList<Integer>();
     List<Integer> min = new ArrayList<Integer>();
     
@@ -42,7 +42,7 @@ public class MinStack {
     
     
     public static void main(String argv[]){
-    	MinStack ms = new MinStack();
+    	MinStack2 ms = new MinStack2();
     	ms.push(1);
     	ms.push(2);
     	ms.push(3);
