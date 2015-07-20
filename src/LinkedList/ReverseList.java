@@ -3,19 +3,17 @@ package LinkedList;
 public class ReverseList {
 	
 	//  iteration version
-     public ListNode reverseList1(ListNode head) {
-         ListNode dummy1 = new ListNode(0);
-         ListNode dummy2 = new ListNode(0);
-         dummy1.next = head;
-         ListNode temp;
-         while(dummy1.next != null){
-             temp = dummy1.next;
-             dummy1.next = temp.next;
-             temp.next = dummy2.next;
-             dummy2.next = temp;
-         }
-         return dummy2.next;
-     }
+    public ListNode reverseList(ListNode head) {
+        if(head == null)  return null;
+        ListNode dummy = new ListNode(0);
+        while(head != null){
+            ListNode temp = head;
+            head = head.next;
+            temp.next = dummy.next;
+            dummy.next = temp;
+        }
+        return dummy.next;
+    }
     
     //  recursion version
     public ListNode reverseList2(ListNode head) {

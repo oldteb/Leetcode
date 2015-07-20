@@ -2,6 +2,7 @@ package test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -41,8 +42,8 @@ public class Test {
 		
 		ArrayList<Integer> al = new ArrayList<Integer>();
 		
-		
-		
+		EnumSet es;
+			
 		
 //		llist.remo
 		Map<Integer,Integer> map;

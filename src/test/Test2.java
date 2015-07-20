@@ -6,7 +6,7 @@ public class Test2 {
 		Father f = new Father();
 		if(Grandpa.d == Father.d)  System.out.println(1);
 		Father.printClass();
-		
+	
 	}
 }
 
@@ -25,5 +25,3 @@ class Father extends Grandpa{
 		System.out.println("this is a Father.");
 	}
 }
-
-
